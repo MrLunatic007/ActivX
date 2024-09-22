@@ -4,81 +4,29 @@
 <html lang="en">
     <head>
         <title>ActivX</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     </head>
     <body>
-        <div class="nav-right visible-xs">
-            <div class="button" id="btn">
-              <div class="bar top"></div>
-              <div class="bar middle"></div>
-              <div class="bar bottom"></div>
-            </div>
-          </div>
-          <!-- nav-right -->
-          <main>
-          
-          
-            <nav>
-              <div class="nav-right hidden-xs">
-                <div class="button" id="btn">
-                  <div class="bar top"></div>
-                  <div class="bar middle"></div>
-                  <div class="bar bottom"></div>
-                </div>
-              </div>
-              <!-- nav-right -->
+      <!-- This is a reverse engineering of the "Hyperspace"
+     design from HTML5 Up! https://html5up.net/hyperspace -->
+
+        <main class="main">
+          <aside class="sidebar">
+            <nav class="nav">
+              <ul>
+                <li class="active"><a href="#">Welcome</a></li>
+                <li><a href="#">Who We Are</a></li>
+                <li><a href="#">What We Do</a></li>
+                <li><a href="#">Get In Touch</a></li>
+              </ul>
             </nav>
-          
-            <a href="https://codepen.io/tonkec/" class="ua" target="_blank">
-              <i class="fa fa-user"></i>
-            </a>
-          </main>
-          
-          <div class="sidebar">
-            <ul class="sidebar-list">
-              <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 1</a></li>
-              <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 2</a></li>
-              <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 3</a></li>
-              <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 4</a></li>
-            </ul>
-          </div><div class="nav-right visible-xs">
-            <div class="button" id="btn">
-              <div class="bar top"></div>
-              <div class="bar middle"></div>
-              <div class="bar bottom"></div>
-            </div>
-          </div>
-          <!-- nav-right -->
-          <main>
-          
-          
-            <nav>
-              <div class="nav-right hidden-xs">
-                <div class="button" id="btn">
-                  <div class="bar top"></div>
-                  <div class="bar middle"></div>
-                  <div class="bar bottom"></div>
-                </div>
-              </div>
-              <!-- nav-right -->
-            </nav>
-          
-            <a href="https://codepen.io/tonkec/" class="ua" target="_blank">
-              <i class="fa fa-user"></i>
-            </a>
-          </main>
-          
-          <div class="sidebar">
-            <ul class="sidebar-list">
-              <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 1</a></li>
-              <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 2</a></li>
-              <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 3</a></li>
-              <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 4</a></li>
-            </ul>
-          </div>
-          <main>
+          </aside>
+
+          <section class="content">
             {% block content %}
             {% endblock content %}
-          </main>
+          </section>
+        </main>
+      <script src="{% static 'js/base.js' %}"></script>
     </body>
 </html>
