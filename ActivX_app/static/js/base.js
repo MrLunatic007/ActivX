@@ -1,22 +1,10 @@
-const sidebarBox = document.querySelector("#box"),
-	sidebarBtn = document.querySelector("#btn"),
-	pageWrapper = document.querySelector("#page-wrapper");
-
-sidebarBtn.addEventListener("click", (event) => {
-	sidebarBtn.classList.toggle("active");
-	sidebarBox.classList.toggle("active");
-});
-
-pageWrapper.addEventListener("click", (event) => {
-	if (sidebarBox.classList.contains("active")) {
-		sidebarBtn.classList.remove("active");
-		sidebarBox.classList.remove("active");
-	}
-});
-
-window.addEventListener("keydown", (event) => {
-	if (sidebarBox.classList.contains("active") && event.keyCode === 27) {
-		sidebarBtn.classList.remove("active");
-		sidebarBox.classList.remove("active");
-	}
+document.addEventListener('DOMContentLoaded', function() {
+    // Active navigation item functionality
+    var currentPage = window.currentPage;
+    var navItems = document.querySelectorAll('.nav ul li');
+    navItems.forEach(function(item) {
+        if (item.querySelector('a').id === 'nav-' + currentPage) {
+            item.classList.add('active');
+        }
+    });
 });

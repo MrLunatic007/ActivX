@@ -3,21 +3,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ActivX</title>
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     </head>
     <body>
-      <!-- This is a reverse engineering of the "Hyperspace"
-     design from HTML5 Up! https://html5up.net/hyperspace -->
-
         <main class="main">
           <aside class="sidebar">
             <nav class="nav">
               <ul>
-                <li class="active"><a href="#">Welcome</a></li>
-                <li><a href="#">Who We Are</a></li>
-                <li><a href="#">What We Do</a></li>
-                <li><a href="#">Get In Touch</a></li>
+                <li><a href="{% url 'home' %}" id="nav-home">Home</a></li>
+                <li><a href="{% url 'profile' %}" id="nav-profile">Profile</a></li>
+                <li><a href="{% url 'leaderboard' %}" id="nav-leaderboard">Leadership Board</a></li>
+                <li><a href="{% url 'settings' %}" id="nav-settings">Settings</a></li>
               </ul>
             </nav>
           </aside>
@@ -27,6 +26,9 @@
             {% endblock content %}
           </section>
         </main>
-      <script src="{% static 'js/base.js' %}"></script>
+        <script>
+            window.currentPage = '{{ request.resolver_match.url_name }}';
+        </script>
+        <script src="{% static 'js/base.js' %}"></script>
     </body>
 </html>
